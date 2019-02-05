@@ -14,7 +14,7 @@ namespace selr{
         String(char ch,size_type size = 1);
         String(const char *str);
         String(const std::string &str);
-        String(StringView<iterator> view);
+        String(StringView view);
         String(const String &);
         String(String &&)noexcept;
         ~String();
@@ -51,8 +51,8 @@ namespace selr{
             return is;
         }
 
-        StringView<iterator> get_view()noexcept;
-        StringView<iterator> get_view(size_type pos,size_type count)noexcept;
+        StringView get_view()noexcept;
+        StringView get_view(size_type pos,size_type count)noexcept;
     protected:
     private:
     };

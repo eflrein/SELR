@@ -5,14 +5,15 @@
 #include "Range.hpp"
 
 namespace selr{
-    template <class Iterator>
-    class StringView : public ContainerRange<Iterator>{
+    class StringView : public ContainerRange<
+            std::vector<char>::iterator >{
     public:
-        StringView(Iterator iter1,Iterator iter2)
-            :ContainerRange<Iterator>(iter1,iter2){}
+        StringView() = default;
+        StringView(iterator iter1,iterator iter2)
+            :ContainerRange<iterator>(iter1,iter2){}
         ~StringView() = default;
 
-        friend std::ostream &operator<<(std::ostream &os,StringView &view){
+        friend std::ostream &operator<<(std::ostream &os,StringView view){
             for(char ch:view){
                 os<<ch;
             }
