@@ -1,56 +1,25 @@
 #ifndef _SELR_STRING_VIEW_H_
 #define _SELR_STRING_VIEW_H_
 
-#include <iterator>
+#include <iostream>
+#include "Range.hpp"
 
 namespace selr{
     template <class Iterator>
-    class StringView{
+    class StringView : public ContainerRange<Iterator>{
     public:
-        using value_type = typename std::iterator_traits<Iterator>::value_type;
-        using pointer = typename std::iterator_traits<Iterator>::pointer;
-        using const_pointer = typename std::iterator_traits<Iterator>::const_pointer;
-        using reference = typename std::iterator_traits<Iterator>::reference;
-        using const_reference = typename std::iterator_traits<Iterator>::const_reference;
-        using size_type = typename std::iterator_traits<Iterator>::size_type;
-        using difference_type = typename std::iterator_traits<Iterator>::difference_type;
+        StringView(Iterator iter1,Iterator iter2)
+            :ContainerRange<Iterator>(iter1,iter2){}
+        ~StringView() = default;
 
-        StringView();
-        StringView(Iterator iter_begin,Iterator Iter
-        StringView(const StringView &);
-        StringView(StringView &&);
-        ~StringView();
-
-        StringView &operator=(StringType &);
-        StringView &operator=(const StringView &);
-        StringView &operator=(StringView &&);
-
-        void remove_prefix(size_type size);
-        void expand_prefix(size_type size);
-        void remove_suffix(size_type size);
-        void expand_suffix(size_type size);
-
-        reference front()noexcept;
-        const_reference front()const noexcept;
-        reference back()noexcept;
-        const_reference back()const noexcept;
-
-        bool empty()const noexcept;
-
-        size_type size()const noexcept;
-
-        reference operator[](size_type index)noexcept;
-        const_reference operator[](size_type index) const noexcept;
-
-        pointer data()noexcept;
-        const_pointer data()const noexcept;
-
-        iterator begin()noexcept;
-        iterator end()noexcept;
+        friend std::ostream &operator<<(std::ostream &os,StringView &view){
+            for(char ch:view){
+                os<<ch;
+            }
+            return os;
+        }
     protected:
     private:
-        iterator m_begin;
-        iterator m_end;
     };
 }
 
