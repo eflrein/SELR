@@ -102,6 +102,9 @@ public:
     using pointer = typename std::iterator_traits<Iterator>::pointer;
     using iterator = Iterator;
 
+    ContainerRange()
+        :m_begin(),
+         m_end(){}
     ContainerRange(iterator begin,iterator end)
         :m_begin(begin),
          m_end(end){}
@@ -143,6 +146,11 @@ public:
     void remove_right(difference_type size = 1){
         m_end = std::prev(m_end,size);
     }
+
+    void map(iterator iter1,iterator iter2){
+        m_begin = iter1;
+        m_end = iter2;
+    }
     
     reference operator[](difference_type index)noexcept{
         return m_begin[index];
@@ -166,7 +174,8 @@ public:
     using value_type = typename std::iterator_traits<Iterator>::value_type;
     using difference_type = typename std::iterator_traits<Iterator>::difference_type;
     using iterator = Iterator;
-    
+
+    Range() = default;
     Range(iterator begin,iterator end)
         :ContainerRange<Iterator>(begin,end){}
     ~Range() = default;
