@@ -16,7 +16,7 @@ namespace selr{
         }
     }
 
-    String::String(StringView<iterator> view){
+    String::String(StringView view){
         for(auto ch:view){
             this->push_back(ch);
         }
@@ -87,12 +87,12 @@ namespace selr{
         return *this;
     }
 
-    StringView<String::iterator> String::get_view() noexcept{
-        return StringView<iterator>(begin(),end());
+    StringView String::get_view() noexcept{
+        return StringView(begin(),end());
     }
 
-    StringView<String::iterator> String::get_view(String::size_type pos,String::size_type count) noexcept{
-        return StringView<iterator>(begin() + pos,begin() + pos + count);
+    StringView String::get_view(String::size_type pos,String::size_type count) noexcept{
+        return StringView(begin() + pos,begin() + pos + count);
     }
 
 }
