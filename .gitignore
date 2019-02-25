@@ -1,6 +1,6 @@
 # c4droid
 .c4droid
 # clion
-cmake-build-debug
+cmake-build-*
 .idea
 CMakeLists.txt
