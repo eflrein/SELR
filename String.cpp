@@ -95,4 +95,12 @@ namespace selr{
         return StringView(begin() + pos,begin() + pos + count);
     }
 
+    U8StringView String::get_u8view() noexcept{
+        return U8StringView(begin(),end());
+    }
+
+    U8StringView String::get_u8view(size_type pos,size_type count) noexcept{
+        return U8StringView(begin() + pos,begin() + pos + count);
+    }
+
 }

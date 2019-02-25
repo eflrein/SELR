@@ -5,8 +5,9 @@
 #include "Range.hpp"
 
 namespace selr{
-    class StringView : public ContainerRange<
-            std::vector<char>::iterator >{
+    class StringView : public xrange::ContainerRange<
+            std::vector<char>::iterator
+        >{
     public:
         StringView() = default;
         StringView(iterator iter1,iterator iter2)

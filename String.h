@@ -6,6 +6,7 @@
 #include <string>
 
 #include "StringView.h"
+#include "U8StringView.h"
 
 namespace selr{
     class String : public std::vector<char>{
@@ -53,6 +54,9 @@ namespace selr{
 
         StringView get_view()noexcept;
         StringView get_view(size_type pos,size_type count)noexcept;
+
+        U8StringView get_u8view()noexcept;
+        U8StringView get_u8view(size_type pos,size_type count)noexcept;
     protected:
     private:
     };
