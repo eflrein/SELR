@@ -177,11 +177,11 @@ namespace xrange{
             return m_begin[index];
         }
 
-        iterator begin() noexcept{
+        iterator begin()noexcept{
             return m_begin;
         }
 
-        iterator end() noexcept{
+        iterator end()noexcept{
             return m_end;
         }
 
