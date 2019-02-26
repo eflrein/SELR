@@ -63,8 +63,6 @@ namespace selr{
     private:
     };
 
-	
-
 }
 
 #endif
