@@ -62,11 +62,6 @@ namespace selr{
     protected:
     private:
     };
-
-<<<<<<< HEAD
-//sdfsdfdssd
-=======
->>>>>>> 78e533d24917f2f38adf2fc05fc7eed04183e8d4
 }
 
 #endif
