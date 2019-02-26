@@ -2,6 +2,7 @@
 #define _SELR_STRING_VIEW_H_
 
 #include <iostream>
+#include <vector>
 #include "Range.hpp"
 
 namespace selr{
@@ -13,6 +14,8 @@ namespace selr{
         StringView(iterator iter1,iterator iter2)
             :ContainerRange<iterator>(iter1,iter2){}
         ~StringView() = default;
+
+        std::string to_std_string();
 
         friend std::ostream &operator<<(std::ostream &os,StringView view){
             for(char ch:view){

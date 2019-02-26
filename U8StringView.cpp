@@ -134,6 +134,8 @@ namespace selr{
         :m_begin(itr1),
          m_end(itr2){}
 
+    U8StringView::~U8StringView() = default;
+
     bool U8StringView::empty() const noexcept{
         return size() == 0;
     }
@@ -182,5 +184,20 @@ namespace selr{
         return *(m_begin + index);
     }
 
-    U8StringView::~U8StringView() = default;
+    std::string U8StringView::to_std_string() const{
+        std::string tmp;
+        for(auto itr = m_begin.raw();itr != m_end.raw(); ++itr){
+            tmp.push_back(*itr);
+        }
+        return tmp;
+    }
+
+    std::wstring U8StringView::to_std_wstring() const{
+        std::wstring tmp;
+        for(auto itr = m_begin;itr != m_end;++itr){
+            tmp.push_back(static_cast<wchar_t>(*itr));
+        }
+        return tmp;
+    }
+
 }

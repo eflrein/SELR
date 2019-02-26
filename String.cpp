@@ -103,4 +103,12 @@ namespace selr{
         return U8StringView(begin() + pos,begin() + pos + count);
     }
 
+    std::string String::to_std_string() const{
+        std::string tmp;
+        for(auto &itr:*this){
+            tmp.push_back(itr);
+        }
+        return tmp;
+    }
+
 }

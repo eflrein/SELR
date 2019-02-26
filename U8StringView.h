@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <iterator>
+#include <iostream>
 
 namespace selr{
     class U8StringView{
@@ -77,11 +78,18 @@ namespace selr{
 
         uint32 operator[](difference_type index)const noexcept;
 
+        std::string to_std_string()const;
+        std::wstring to_std_wstring()const;
+
         iterator begin()noexcept{
             return m_begin;
         }
         iterator end()noexcept{
             return m_end;
+        }
+
+        friend std::ostream &operator<<(std::ostream &os,U8StringView &u8str){
+            return os<<u8str.to_std_string();
         }
     protected:
     private:

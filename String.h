@@ -52,6 +52,8 @@ namespace selr{
             return is;
         }
 
+        std::string to_std_string()const;
+
         StringView get_view()noexcept;
         StringView get_view(size_type pos,size_type count)noexcept;
 
