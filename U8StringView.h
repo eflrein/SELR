@@ -89,7 +89,7 @@ namespace selr{
         }
 
         friend std::ostream &operator<<(std::ostream &os,U8StringView &u8str){
-            return os<<u8str.to_std_string();
+            return os<<u8str.data();
         }
     protected:
     private:
