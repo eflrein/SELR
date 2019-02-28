@@ -48,6 +48,9 @@ namespace selr{
         pointer data()noexcept;
         const_pointer data()const noexcept;
 
+        std::vector<char> &raw()noexcept;
+        const std::vector<char> &raw()const noexcept;
+
         iterator begin()noexcept;
         iterator end()noexcept;
         const_iterator cbegin()const noexcept;

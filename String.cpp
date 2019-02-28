@@ -146,6 +146,13 @@ namespace selr{
         return m_data.data();
     }
 
+    std::vector<char> &String::raw()noexcept{
+        return m_data;
+    }
+    const std::vector<char> &String::raw()const noexcept{
+        return m_data;
+    }
+
     String::iterator String::begin() noexcept{
         return m_data.begin();
     }
