@@ -5,6 +5,7 @@
 
 namespace selr{
     StringView find_bruteforce(StringView target,StringView pattern);
+    StringView find_boyermoore(StringView target,StringView pattern);
 }
 
 #endif //_SELR_FIND_H_
