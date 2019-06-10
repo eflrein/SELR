@@ -42,26 +42,26 @@ namespace selr{
 
     U8StringView::iterator U8StringView::iterator::operator+(U8StringView::size_type offset)const noexcept{
         auto ans = iterator(m_itr);
-        for(int i = 0;i < offset;++i)
+        for(size_type i = 0;i < offset;++i)
             ++ans;
         return ans;
     }
 
     U8StringView::iterator &U8StringView::iterator::operator+=(U8StringView::size_type offset){
-        for(int i = 0;i < offset;++i)
+        for(size_type i = 0;i < offset;++i)
             ++(*this);
         return *this;
     }
 
     U8StringView::iterator U8StringView::iterator::operator-(U8StringView::size_type offset)const noexcept{
         auto ans = iterator(m_itr);
-        for(int i = 0;i < offset;++i)
+        for(size_type i = 0;i < offset;++i)
             --ans;
         return ans;
     }
 
     U8StringView::iterator &U8StringView::iterator::operator-=(U8StringView::size_type offset){
-        for(int i = 0;i < offset;++i)
+        for(size_type i = 0;i < offset;++i)
             --(*this);
         return *this;
     }
